@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.list {
+    display: flex;
+    list-style: none;
+}
+
+.item {
+    margin-right: 1em;
+}

@@ -1,25 +1,27 @@
-import './App.css'
-import HelloWorld from './components/HelloWorld'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import Empresa from './pages/Empresa'
+import Contato from './pages/Contato'
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
 
 function App() {
-  const name = 'Avelino'
-
-  const newName = name.toUpperCase()
-
-  function sum(a, b) {
-    return a + b
-  }
-
-  const url = 'https://via.placeholder.com/150'
-
   return (
-    <div className="App">
-      <h2>Alterando JSX</h2>
-      <p>Olá, {newName}</p>
-      <p>Soma: {2 + 2}</p>
-      <img src={url} alt="Minha Imgem"/>
-      <HelloWorld/>
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/"> 
+          <Home />
+        </Route>
+        <Route path="/empresa"> 
+          <Empresa />
+        </Route>
+        <Route path="/contato">
+          <Contato />
+        </Route>
+      </Switch>
+      <Footer />
+    </Router>
   )
 }
 
